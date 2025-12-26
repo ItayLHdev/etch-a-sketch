@@ -1,6 +1,4 @@
 const grid = document.querySelector("#grid");
-const gridAreaBtn = document.querySelector("#grid-area");
-const clearBtn = document.querySelector("#clear");
 
 const getRandomColor = () => {
     const letters = "ABCDEF0123456789"
@@ -11,6 +9,9 @@ const getRandomColor = () => {
     return color;
 };
 
+const randomColorCheckbox = document.querySelector("#random-color-checkbox");
+const darkeningEffectCheckbox = document.querySelector("#darkening-checkbox");
+
 function makeGrid(area) {
     const divs = grid.querySelectorAll("div");
     divs.forEach((div) => {
@@ -20,15 +21,27 @@ function makeGrid(area) {
         const div = document.createElement("div");
         div.style.flexBasis = `${800/area}px`;
         grid.appendChild(div);
-        let opacity = 0.1;
+
+        let opacity = 0;
         div.addEventListener("mouseenter", () => {
-            opacity += 0.1
-            div.style.opacity = opacity;
-            div.style.background = getRandomColor();
-        });
+            if (randomColorCheckbox.checked) {
+                div.style.background = getRandomColor();
+            } else {
+                div.style.background = "black";
+            }
+
+            if (darkeningEffectCheckbox.checked) {
+                div.style.opacity = opacity;
+                opacity += 0.1;
+            } else {
+                div.style.opacity = 1
+            }
+        })
     }
 }
 makeGrid(16);
+
+const gridAreaBtn = document.querySelector("#grid-area");
 
 gridAreaBtn.addEventListener("click", () => {
     const input = Number(prompt("Enter the number of squares per side:"));
@@ -37,6 +50,8 @@ gridAreaBtn.addEventListener("click", () => {
         makeGrid(input);
     }
 });
+
+const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", () => {
     const divs = grid.querySelectorAll("div");
