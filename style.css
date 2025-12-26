@@ -8,11 +8,12 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#grid {
+.grid {
     height: 800px;
     width: 800px;
     display: flex;
@@ -20,9 +21,8 @@ body {
     border: none;
 }
 
-#grid > div {
+.grid > div {
     aspect-ratio: 1/1;
-    flex: 1 1 50px;
     border: 1px solid black;
 }
 
