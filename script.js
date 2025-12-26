@@ -2,6 +2,15 @@ const grid = document.querySelector("#grid");
 const gridAreaBtn = document.querySelector("#grid-area");
 const clearBtn = document.querySelector("#clear");
 
+const getRandomColor = () => {
+    const letters = "ABCDEF0123456789"
+    let color = "#"
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)]
+    }
+    return color;
+};
+
 function makeGrid(area) {
     const divs = grid.querySelectorAll("div");
     divs.forEach((div) => {
@@ -12,7 +21,7 @@ function makeGrid(area) {
         div.style.flexBasis = `${800/area}px`;
         grid.appendChild(div);
         div.addEventListener("mouseenter", () => {
-            div.style.background = "blue";
+            div.style.background = getRandomColor();
         });
     }
 }
