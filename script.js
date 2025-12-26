@@ -1,11 +1,12 @@
-const grid = document.querySelector(".grid");
+const grid = document.querySelector("#grid");
 const gridAreaBtn = document.querySelector("#grid-area");
+const clearBtn = document.querySelector("#clear");
 
 function makeGrid(area) {
-    const divs = grid.querySelectorAll("div")
+    const divs = grid.querySelectorAll("div");
     divs.forEach((div) => {
-        div.remove()
-    })
+        div.remove();
+    });
     for (let i = 0; i < (area * area); i++) {
         const div = document.createElement("div");
         div.style.flexBasis = `${800/area}px`;
@@ -15,16 +16,19 @@ function makeGrid(area) {
         });
     }
 }
-makeGrid(16)
-
-function replaceGrid(input) {
-    makeGrid(input)
-}
+makeGrid(16);
 
 gridAreaBtn.addEventListener("click", () => {
-    const input = parseInt(prompt("Enter the number of squares per side:"));
-    if (input > 100) alert("please enter a number lower then 100");
+    const input = Number(prompt("Enter the number of squares per side:"));
+    if (input > 100 || Number.isNaN(input)) alert("please enter a number lower then 100");
     else {
-        replaceGrid(input);
+        makeGrid(input);
     }
 });
+
+clearBtn.addEventListener("click", () => {
+    const divs = grid.querySelectorAll("div");
+    divs.forEach((div) => {
+        div.style.background = "white";
+    })
+})

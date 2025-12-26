@@ -13,7 +13,7 @@ body {
     align-items: center;
 }
 
-.grid {
+#grid {
     height: 800px;
     width: 800px;
     display: flex;
@@ -21,7 +21,7 @@ body {
     border: none;
 }
 
-.grid > div {
+#grid > div {
     aspect-ratio: 1/1;
     border: 1px solid black;
 }
