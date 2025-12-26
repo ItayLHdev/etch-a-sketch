@@ -8,17 +8,28 @@
 </head>
 <body>
     <header>
-        <button id="grid-area">Change Grid Size</button>
-        <button id="clear">Clear</button>
-
-        <input type="checkbox" id="random-color-checkbox">
-        <label for="random-color-checkbox">Enable Random Color</label>
-        <br>
-        <input type="checkbox" id="darkening-checkbox">
-        <label for="darkening-checkbox">Enable Darkening Effect</label>
+        <h1>Etch-A-Sketch</h1>
+        <h3>By Itay LH</h3>
     </header>
 
-    <div id="grid"></div>
+    <div class="wrapper">
+        <div id="grid"></div>
+
+        <div class="buttons">
+            <button id="grid-area">Change Grid Size</button>
+            <button id="clear">Clear</button>
+
+            <div class="buttons-wrapper">
+                <input type="checkbox" id="random-color-checkbox">
+                <label for="random-color-checkbox">Enable Random Color</label>           
+            </div>
+            
+            <div class="buttons-wrapper">
+                <input type="checkbox" id="darkening-checkbox">
+                <label for="darkening-checkbox">Enable Darkening Effect</label>
+            </div>
+        </div>
+    </div>
 
     <script src="./script.js"></script>
 </body>

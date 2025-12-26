@@ -1,16 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 body {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+header h1 {
+    font-size: 100px;
+    font-family: "Cedarville Cursive", cursive;
+    text-align: center;
+}
+header h3 {
+    text-align: center;
+    transform: translateY(-25px);
+    font-family: sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.buttons button {
+    border: 2px solid black;
+    padding: 25px 50px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.buttons-wrapper {
+    border: 2px solid black;
+    padding: 15px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 8px;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 40px;
+    width: 40px;
+    background-color: #d5d5d5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label {
+    color: #4c4c4c;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover {
+    background-color: #a5a5a5;
+}
+
+input[type="checkbox"]:checked {
+    background-color: hsl(100, 100%, 50%);
 }
 
 #grid {
