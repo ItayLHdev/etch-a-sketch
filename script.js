@@ -20,7 +20,10 @@ function makeGrid(area) {
         const div = document.createElement("div");
         div.style.flexBasis = `${800/area}px`;
         grid.appendChild(div);
+        let opacity = 0.1;
         div.addEventListener("mouseenter", () => {
+            opacity += 0.1
+            div.style.opacity = opacity;
             div.style.background = getRandomColor();
         });
     }
@@ -39,5 +42,6 @@ clearBtn.addEventListener("click", () => {
     const divs = grid.querySelectorAll("div");
     divs.forEach((div) => {
         div.style.background = "white";
+        div.style.opacity = 1;
     })
 })
